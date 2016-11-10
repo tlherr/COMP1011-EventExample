@@ -12,6 +12,8 @@ import com.tlherr.Components.TextInput;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import javax.swing.*;
 
 
@@ -54,7 +56,39 @@ public class TextEditFrame extends JFrame {
         add(styleOptions);
 
         FontSize sizeOptions = new FontSize();
+
+
+
+        sizeOptions.addActionListener(new ComboBoxItemSelectedListener() {
+
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    Object item = e.getItem();
+                    userInput.getInputField().setFont(new Font(userInput.getFont().getName(), userInput.getFont().getStyle(), Integer.parseInt(item.toString())));
+                }
+            }
+        });
+
+
+
         add(sizeOptions);
+    }
+
+
+    private class ComboBoxItemSelectedListener implements ItemListener {
+
+        /**
+         * Invoked when an item has been selected or deselected by the user.
+         * The code written for this method performs the operations
+         * that need to occur when an item is selected (or deselected).
+         *
+         * @param e
+         */
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+
+        }
     }
     
     
