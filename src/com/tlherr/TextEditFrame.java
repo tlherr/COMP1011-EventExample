@@ -31,27 +31,23 @@ public class TextEditFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Action Command is: " + e.getActionCommand());
 
-                Font font = new Font("Times New Roman", Font.PLAIN, userInput.getFont().getSize());
                 switch(e.getActionCommand()) {
                     case "Bold":
-                        font = new Font(userInput.getFont().getName(), Font.BOLD, userInput.getFont().getSize());
+                        userInput.getInputField().setFont(new Font(userInput.getFont().getName(), Font.BOLD, userInput.getFont().getSize()));
                         break;
 
                     case "Ariel":
-                        font = new Font("Ariel", Font.PLAIN, userInput.getFont().getSize());
+                        userInput.getInputField().setFont(new Font("Ariel", Font.PLAIN, userInput.getFont().getSize()));
                         break;
 
                     case "Italics":
-                        font = new Font(userInput.getFont().getName(), Font.ITALIC, userInput.getFont().getSize());
+                        userInput.getInputField().setFont(new Font(userInput.getFont().getName(), Font.ITALIC, userInput.getFont().getSize()));
                         break;
 
                     case "Serif":
-                        font = new Font(Font.SERIF, Font.PLAIN, userInput.getFont().getSize());
+                        userInput.getInputField().setFont(new Font(Font.SERIF, Font.PLAIN, userInput.getFont().getSize()));
                         break;
                 }
-
-                userInput.setFont(font);
-                revalidate();
             }
         });
 
