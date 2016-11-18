@@ -12,7 +12,7 @@ public class FontSize extends JPanel {
     private EventListenerList listenerList = new EventListenerList();
 
     public FontSize() {
-        String[] sizeOptions = { "10", "11" ,"12" ,"13" ,"14", "15"};
+        String[] sizeOptions = { "14", "20" };
         textSizeSelection = new JComboBox<>(sizeOptions);
         add(textSizeSelection, BorderLayout.AFTER_LINE_ENDS);
     }
